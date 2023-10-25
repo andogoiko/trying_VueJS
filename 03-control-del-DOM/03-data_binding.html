@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data binding</title>
+</head>
+<body>
+    <div id="app">
+        
+        <h1>{{mensaje}}</h1> <!-- interpolación -->
+        <h1 v-text="mensaje"></h1> <!-- directiva text -->
+        <input type="text" placeholder="Escriba el texto" v-model="mensaje">
+
+        <hr>
+        <a :href="url" target="_blank">andogoiko</a> <!-- con los 2 puntos hacemos referencia a una propiedad de dentro de data, ya que no se puede hacer interpolación -->
+
+    </div>
+    
+    <!-- CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> 
+    <script>
+        // const data = document.querySelector('input');
+        // const dataModify = document.querySelector('h1')
+
+        // data.addEventListener('keyup', function(){
+        //     dataModify.innerHTML = data.value;
+        // })
+
+        const app = new Vue({
+            el: '#app',
+            data:{
+                mensaje: 'Hola Andois',
+                url: 'https://github.com/andogoiko'
+            }
+        })
+
+
+    </script>
+</body>
+</html>
