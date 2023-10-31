@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directiva v-show</title>
+</head>
+<body>
+
+    <!-- Calculadora de notas | 3.0 > A - 3.0 < F | -->
+
+    <div id="app">
+
+        <input type="number" v-model="nota">
+        <!-- aprobado -->
+        <p v-show="resultado()">Has aprobado uueeee</p>
+        <!-- penco -->
+        <p v-show="!resultado()">Has pencado</p>
+    </div>
+
+ 
+
+    <!-- CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> 
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                nota: 0
+            },
+            methods:{
+                resultado(){
+                    if(this.nota >= 3.0 && this.nota <= 5.0){
+                        return true
+                    }else{
+                        return false
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
