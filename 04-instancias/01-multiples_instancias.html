@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVue múltiples instancias</title>
+</head>
+<body>
+
+    <!-- Calculadora de notas | 3.0 > A - 3.0 < F | -->
+
+    <div id="app">
+
+        {{titulo}}
+        <p>este es el componente 1</p>
+        <input type="text" v-model="nombre"> {{nombre}}
+
+    </div>
+    <hr>
+    <div id="componente">
+
+        <input type="text" v-model="texto"> {{texto}}
+
+    </div>
+
+ 
+    <!-- password -->
+    <!-- CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> 
+    <script>
+
+        const uno = new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Andois',
+                nombre: 'Andoitz Goicoehea'
+            }
+        })
+
+        const dos = new Vue({
+            el: '#componente',
+            data: {
+                texto: uno.nombre
+            }
+        })
+
+    </script>
+</body>
+</html>
