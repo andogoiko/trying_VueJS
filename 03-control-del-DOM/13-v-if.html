@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directiva v-if</title>
+</head>
+<body>
+
+    <!-- Calculadora de notas | 3.0 > A - 3.0 < F | -->
+
+    <div id="app">
+
+        <input type="text" v-model="login">
+        <p>{{password}}</p>
+        <div v-if="isLogin">Logueado</div>
+        <div v-else="isLogin">No logueado</div>
+
+    </div>
+
+ 
+    <!-- password -->
+    <!-- CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> 
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                password: 'fdfrgfgdgv55610fdsf',
+                login: ''
+            },
+            computed: {
+                isLogin(){
+                    if(this.password == this.login){
+                        return true
+                    }else{
+                        return false
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
