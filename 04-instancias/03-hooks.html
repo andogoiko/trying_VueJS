@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hooks</title>
+</head>
+<body>
+
+
+    <div id="app">
+
+        <center>
+
+            {{titulo}}
+
+        </center>
+
+        <input type="text" v-model="nombre">
+        {{nombre}}
+
+    </div>
+    <hr>
+ 
+    <!-- 
+        instancias independientes
+
+     -->
+    <!-- CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> 
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Andois',
+                nombre: 'Andoitz Goicoechea'
+            },
+
+            // beforeCreate = después de la inicialización de la instancia - antes de la creación del componente
+            beforeCreate(){
+                alert('Antes de crear componente ' + this.nombre + ' (sale indefinido porque no está creado)')
+            },
+            // created = ejecuta cuando instancia, evento, propiedad etc
+            created(){
+                alert('Creado componente ' + this.nombre)
+            },
+            // beforeMount = se ejecuta justo antes de añadir al DOM
+            beforeMount(){
+                alert('justo antes de añadir al DOM ' + this.nombre)
+            },
+            // mounted = se ejecuta después de añadir al DOM
+            mounted(){
+                alert('después de añadir al DOM ' + this.nombre)
+            },
+            // beforeUpdate = se ejecuta cuando el objeto data cambia, no el DOM
+            beforeUpdate(){
+                alert('cuando el objeto data cambia ' + this.nombre)
+            },
+            // updated = se ejecuta después de que cambie el objeto data y el DOM lo muestre
+            updated(){
+                alert('el objeto data cambió en el DOM ' + this.nombre + ' (el cambio se muestra tras aceptar la alerta ya que la alerta detiene el ciclo)')
+            },
+            // beforeDestroy = se ejecuta justo antes de eliminar la instancia
+            // destroyed = se ejecuta cuando la instancia, directivas etc se ha eliminado
+
+        })
+
+    </script>
+</body>
+</html>
