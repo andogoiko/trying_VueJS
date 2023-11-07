@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mount</title>
+</head>
+<body>
+
+
+    <div id="app">
+
+        <center>
+            {{titulo}}
+        </center>
+        <p>{{temp}}</p>
+        <input type="text" v-model="nombre">
+        {{nombre}}
+        <contador></contador>
+        <contador></contador>
+        <contador></contador>
+    </div>
+
+    <hr>
+
+ 
+    <!-- componente template -->
+    <!-- CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script> 
+    <script>
+
+        Vue.component('contador', {
+            template: "<button @click='numero++'> Soy un contador {{numero}}</button>",
+            data(){
+                return {
+                    numero: 0
+                }
+            }
+        })
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Andois',
+                nombre: 'Andoitz Goicoechea',
+                temp: 'este es el componente 1'
+            },
+
+        
+        })
+
+
+    </script>
+</body>
+</html>
