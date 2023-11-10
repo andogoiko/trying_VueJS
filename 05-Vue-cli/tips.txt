@@ -1,0 +1,2 @@
+la versión de vue < 3 utiliza vue init, pero hoy día da errores de certificado ("self signed certificate")
+por ello a partir de la versión 3 se utiliza: vue create proyecto01 -d "vuejs-templates/webpack-simple"
